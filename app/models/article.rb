@@ -26,6 +26,7 @@ class Article < ApplicationRecord
   validates :page_header, presence: true
   validates :slug, presence: true, uniqueness: true
 
+  has_many :comments, dependent: :destroy
   belongs_to :category
 
   before_create :assign_slug
