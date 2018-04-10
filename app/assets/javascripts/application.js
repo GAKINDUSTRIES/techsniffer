@@ -10,6 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery-3.2.1.min.js
+//= require plugins
+//= require axios.js
+//= require main.js
+//= require modernizr.js
+//= require pace.min.js
 //= require_tree .
