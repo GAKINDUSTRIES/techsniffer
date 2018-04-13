@@ -18,6 +18,7 @@
 # Indexes
 #
 #  index_articles_on_category_id  (category_id)
+#  index_articles_on_published    (published)
 #  index_articles_on_slug         (slug)
 #
 
