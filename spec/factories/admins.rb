@@ -26,6 +26,8 @@
 #  city                   :string           not null
 #  zipcode                :string           not null
 #  country_code           :string           not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 # Indexes
 #
