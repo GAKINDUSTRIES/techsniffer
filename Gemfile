@@ -22,10 +22,12 @@ gem 'puma', '~> 3.0'
 gem 'rack-cors', '~> 0.4.0'
 gem 'sendgrid', '~> 1.2.4'
 gem 'tilt', '~> 2.0.7'
+gem 'rails_admin', '~> 1.3'
 
 group :development, :test do
   gem 'bullet', '~> 5.5.1'
   gem 'factory_bot_rails', '~> 4.8.2'
+  gem 'faker', '~> 1.7.3'
   gem 'pry-byebug', '~> 3.3.0', platform: :mri
   gem 'rspec-core', '~> 3.5.2'
   gem 'rspec-rails', '~> 3.5.2'
@@ -46,7 +48,6 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 1.4.1'
-  gem 'faker', '~> 1.7.3'
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'simplecov', '~> 0.13.0', require: false
 end

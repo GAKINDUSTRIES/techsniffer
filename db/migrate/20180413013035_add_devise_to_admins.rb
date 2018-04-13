@@ -32,6 +32,7 @@ class AddDeviseToAdmins < ActiveRecord::Migration[5.1]
       t.string :city, null: false
       t.string :zipcode, null: false
       t.string :country_code, null: false
+      t.timestamps
     end
 
     add_index :admins, :email,                unique: true

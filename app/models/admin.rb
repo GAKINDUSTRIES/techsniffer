@@ -26,6 +26,8 @@
 #  city                   :string           not null
 #  zipcode                :string           not null
 #  country_code           :string           not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 # Indexes
 #
@@ -34,8 +36,8 @@
 #
 
 class Admin < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  include AdminRailsAdmin
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
