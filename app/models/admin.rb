@@ -40,6 +40,7 @@ class Admin < ApplicationRecord
 
   has_many :work_experiences, dependent: :destroy
   has_many :skills, dependent: :destroy
+  has_many :recommendations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

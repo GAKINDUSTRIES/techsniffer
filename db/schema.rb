@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415175228) do
+ActiveRecord::Schema.define(version: 20180415185127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,20 @@ ActiveRecord::Schema.define(version: 20180415175228) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.string "message"
+    t.string "recommendation_text"
+    t.string "recommender_name"
+    t.integer "relationship"
+    t.string "subject"
+    t.integer "recommendation_id", null: false
+    t.bigint "admin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_recommendations_on_admin_id"
+    t.index ["recommendation_id"], name: "index_recommendations_on_recommendation_id"
   end
 
   create_table "skills", force: :cascade do |t|
