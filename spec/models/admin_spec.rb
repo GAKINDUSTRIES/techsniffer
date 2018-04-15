@@ -57,4 +57,8 @@ describe Admin do
     it { should validate_presence_of(:zipcode) }
     it { should validate_presence_of(:country_code) }
   end
+
+  describe 'associations' do
+    it { should have_many(:work_experiences).dependent(:destroy) }
+  end
 end

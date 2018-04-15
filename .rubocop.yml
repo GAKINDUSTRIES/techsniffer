@@ -21,6 +21,7 @@ Metrics/BlockLength:
     - config/**/*
     - spec/**/*
     - app/admin/**/*
+    - app/models/concerns/*
 
 Metrics/BlockNesting:
   Max: 4

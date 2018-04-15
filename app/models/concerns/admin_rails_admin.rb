@@ -3,6 +3,10 @@ module AdminRailsAdmin
 
   included do
     rails_admin do
+      configure :bio, :text do
+        html_attributes rows: 20, cols: 50
+      end
+
       list do
         field :first_name
         field :last_name

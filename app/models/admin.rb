@@ -38,6 +38,8 @@
 class Admin < ApplicationRecord
   include AdminRailsAdmin
 
+  has_many :work_experiences, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
