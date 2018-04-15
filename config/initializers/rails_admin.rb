@@ -4,6 +4,8 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :admin
   end
 
+  config.current_user_method(&:current_admin)
+
   config.included_models = %w(Admin)
 
   # Display empty fields
