@@ -60,5 +60,6 @@ describe Admin do
 
   describe 'associations' do
     it { should have_many(:work_experiences).dependent(:destroy) }
+    it { should have_many(:skills).dependent(:destroy) }
   end
 end
