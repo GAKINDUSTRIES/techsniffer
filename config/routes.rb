@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     passwords:  'api/v1/passwords'
   }
 
-  root to: 'rails_admin/main#dashboard'
-
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       devise_scope :user do
