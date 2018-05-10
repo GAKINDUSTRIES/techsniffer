@@ -295,6 +295,39 @@
     };
 
 
+   /* Skills section
+    * ------------------------------------------------------ */
+    var ssSkills = function() {
+
+        var skillSection = $(".skill-bars"),
+        skills = $(".skill-bars .progress");
+
+        skillSection.waypoint({
+
+            handler: function(direction) {
+
+                if (direction === "down") {
+
+                    skills.each(function () {
+                        var $this = $(this);
+                        this.style.animation = 'none';
+                        this.offsetHeight; // trigger reflow
+                        this.style.animation = null;
+
+                    });
+
+                }
+
+                this.destroy();
+
+            },
+
+            offset: "90%"
+
+        });
+    };
+
+
    /* Smooth Scrolling
     * ------------------------------------------------------ */
     var ssSmoothScroll = function() {
@@ -444,6 +477,7 @@
           ssAlertBoxes();
           ssContactForm();
           ssBackToTop();
+          ssSkills();
         }())
       })();
     });

@@ -18,7 +18,7 @@
 #  username               :string           not null
 #  website                :string           not null
 #  avatar                 :string           not null
-#  bio                    :string           not null
+#  extended_bio           :string           not null
 #  projects_completed     :integer          not null
 #  happy_clients          :integer          not null
 #  phone                  :string           not null
@@ -28,6 +28,7 @@
 #  country_code           :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  brief_bio              :string
 #
 # Indexes
 #
@@ -53,7 +54,8 @@ class Admin < ApplicationRecord
             :website,
             :avatar,
             :projects_completed,
-            :bio,
+            :brief_bio,
+            :extended_bio,
             :happy_clients,
             :phone,
             :address,

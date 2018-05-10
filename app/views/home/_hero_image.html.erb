@@ -1,0 +1,45 @@
+<section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="assets/hero_image.png" data-natural-width=1600 data-natural-height=900 data-position-y=center>
+
+  <div class="overlay"></div>
+  <div class="shadow-overlay"></div>
+
+  <div class="home-content">
+      <div class="row home-content__main">
+        <h3>Hello There</h3>
+        <h1>
+          <%= t('page_hero.greetings.presentation') + admin.full_name %> <br>
+          <%= t('page_hero.greetings.title') %> <br>
+          <%= t('page_hero.greetings.title2') %> <br>
+          <%= t('page_hero.greetings.title3') %> <br>
+        </h1>
+        <div class="home-content__buttons">
+          <a href="#blog" class="smoothscroll btn btn--stroke">
+            Latest Posts
+          </a>
+          <a href="#about" class="smoothscroll btn btn--stroke">
+            More About Me
+          </a>
+        </div>
+        <div class="home-content__scroll">
+          <a href="#about" class="scroll-link smoothscroll">
+            <span>Scroll Down</span>
+          </a>
+        </div>
+      </div>
+  </div>
+
+  <ul class="home-social">
+    <li>
+      <a href="<%= t('social.github') %>"><i class="im im-github" aria-hidden="true"></i><span>Github</span></a>
+    </li>
+    <li>
+      <a href="<%= t('social.twitter') %>"><i class="im im-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="<%= t('social.instagram') %>"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+    </li>
+    <li>
+      <a href="<%= t('social.linkedin') %>"><i class="im im-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
+    </li>
+  </ul>
+</section>
