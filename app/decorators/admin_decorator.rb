@@ -1,4 +1,5 @@
 class AdminDecorator < Draper::Decorator
+  decorates_association :work_experiences
   delegate_all
 
   def full_name
