@@ -12,6 +12,9 @@
 #  admin_id            :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  recommender_avatar  :string
+#  recommender_role    :string
+#  recommender_company :string
 #
 # Indexes
 #
@@ -24,8 +27,6 @@ require 'rails_helper'
 describe Recommendation do
   describe 'validations' do
     subject { build :recommendation }
-    it { is_expected.to validate_presence_of :recommendation_id }
-    it { is_expected.to validate_uniqueness_of :recommendation_id }
     it { is_expected.to validate_presence_of :admin }
   end
 

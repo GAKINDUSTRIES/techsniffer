@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416020448) do
+ActiveRecord::Schema.define(version: 20180515014310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,9 @@ ActiveRecord::Schema.define(version: 20180416020448) do
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "recommender_avatar"
+    t.string "recommender_role"
+    t.string "recommender_company"
     t.index ["admin_id"], name: "index_recommendations_on_admin_id"
     t.index ["recommendation_id"], name: "index_recommendations_on_recommendation_id"
   end

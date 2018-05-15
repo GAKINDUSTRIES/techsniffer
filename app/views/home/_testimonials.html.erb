@@ -6,46 +6,19 @@
             <h1 class="h02">What People Say.</h1>
         </div>
     </div>
-
     <div class="row testimonials">
-
         <div class="col-full testimonials__slider">
-
-            <% admin.recommendations.each do |recommendation|
+          <% admin.recommendations.each do |recommendation| %>
 
               <div class="testimonials__slide">
-                  <%= image_tag "avatars/user-01.jpg", alt: "Author image", class: 'testimonials__avatar' %>
-                  <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum.
-                  Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.</p>
+                  <%= image_tag recommendation.recommender_avatar, alt: "Author image", class: 'testimonials__avatar' %>
+                  <p><%= recommendation.recommendation_text %></p>
                   <div class="testimonials__author h06">
-                      Tim Cook
-                      <span>CEO, Apple</span>
+                      <%= recommendation.recommender_name %>
+                      <span><%= recommendation.recommender_postion_and_role %></span>
                   </div>
               </div>
             <% end %>
-
-            <div class="testimonials__slide">
-                <%= image_tag "avatars/user-05.jpg", alt: "Author image", class: 'testimonials__avatar' %>
-                <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-                <div class="testimonials__author h06">
-                    Sundar Pichai
-                    <span>CEO, Google</span>
-                </div>
-            </div>
-
-            <div class="testimonials__slide">
-                <%= image_tag "avatars/user-02.jpg", alt: "Author image", class: 'testimonials__avatar' %>
-                <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-                <div class="testimonials__author h06">
-                    Satya Nadella
-                    <span>CEO, Microsoft</span>
-                </div>
-            </div>
-
         </div> <!-- end testimonials__slider -->
-
     </div> <!-- end testimonials -->
-
 </div>

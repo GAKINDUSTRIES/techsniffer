@@ -12,6 +12,9 @@
 #  admin_id            :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  recommender_avatar  :string
+#  recommender_role    :string
+#  recommender_company :string
 #
 # Indexes
 #
@@ -20,9 +23,10 @@
 #
 
 class Recommendation < ApplicationRecord
+  include RecommendationAdmin
+
   belongs_to :admin
 
-  validates :recommendation_id, presence: true, uniqueness: true
   validates :admin, presence: true
 
   enum relationship: %i[
