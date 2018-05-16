@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515014310) do
+ActiveRecord::Schema.define(version: 20180516001443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180515014310) do
     t.string "country_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "brief_bio"
+    t.string "brief_bio", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -58,8 +58,10 @@ ActiveRecord::Schema.define(version: 20180515014310) do
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "summary", null: false
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["published"], name: "index_articles_on_published"
+    t.index ["published_at"], name: "index_articles_on_published_at"
     t.index ["slug"], name: "index_articles_on_slug"
   end
 
@@ -100,7 +102,7 @@ ActiveRecord::Schema.define(version: 20180515014310) do
     t.string "recommender_name"
     t.integer "relationship"
     t.string "subject"
-    t.integer "recommendation_id", null: false
+    t.integer "recommendation_id"
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

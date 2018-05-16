@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   private
 
   def latest_articles
-    @articles ||= Article.latest
+    @articles ||= ArticleDecorator.decorate_collection(Article.latest)
   end
 
   def admin

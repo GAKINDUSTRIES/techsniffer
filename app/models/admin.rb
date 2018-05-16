@@ -28,7 +28,7 @@
 #  country_code           :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  brief_bio              :string
+#  brief_bio              :string           not null
 #
 # Indexes
 #
