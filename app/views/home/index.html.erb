@@ -8,7 +8,7 @@
     <ul class="header-nav">
       <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
       <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-      <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
+      <li><a class="smoothscroll"  href="#testimonials" title="testimonials">Testimonials</a></li>
       <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
       <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
     </ul>
@@ -23,85 +23,7 @@
 <%= render "testimonials" %>
 <%= render "latest_articles_section" %>
 <%= render "stats" %>
-
-
-  <section id="contact" class="s-contact target-section">
-      <div class="row narrow section-intro">
-          <div class="col-full">
-              <h3>Contact</h3>
-              <h1>Say Hello.</h1>
-
-              <p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
-          </div>
-      </div>
-
-      <div class="row contact__main">
-          <div class="col-eight tab-full contact__form">
-              <form name="contactForm" id="contactForm" method="post" action="">
-                  <fieldset>
-
-                  <div class="form-field">
-                      <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-                  </div>
-                  <div class="form-field">
-                      <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
-                  </div>
-                  <div class="form-field">
-                      <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
-                  </div>
-                  <div class="form-field">
-                      <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
-                  </div>
-                  <div class="form-field">
-                      <button class="full-width btn--primary">Submit</button>
-                      <div class="submit-loader">
-                          <div class="text-loader">Sending...</div>
-                          <div class="s-loader">
-                              <div class="bounce1"></div>
-                              <div class="bounce2"></div>
-                              <div class="bounce3"></div>
-                          </div>
-                      </div>
-                  </div>
-
-                  </fieldset>
-              </form>
-
-              <!-- contact-warning -->
-              <div class="message-warning">
-                  Something went wrong. Please try again.
-              </div>
-
-              <!-- contact-success -->
-              <div class="message-success">
-                  Your message was sent, thank you!<br>
-              </div>
-
-          </div>
-          <div class="col-four tab-full contact__infos">
-              <h4 class="h06">Phone</h4>
-              <p>Phone: (+63) 555 1212<br>
-              Mobile: (+63) 555 0100<br>
-              Fax: (+63) 555 0101
-              </p>
-
-              <h4 class="h06">Email</h4>
-              <p>someone@holawebsite.com<br>
-              info@holawebsite.com
-              </p>
-
-              <h4 class="h06">Address</h4>
-              <p>
-              1600 Amphitheatre Parkway<br>
-              Mountain View, CA<br>
-              94043 US
-              </p>
-          </div>
-
-      </div>
-
-  </section> <!-- end s-contact -->
-
+<%= render "contact" %>
 
   <!-- footer
   ================================================== -->
@@ -114,25 +36,21 @@
               </div>
 
               <ul class="footer-social">
-                  <li><a href="#0">
-                      <i class="im im-facebook" aria-hidden="true"></i>
-                      <span>Facebook</span>
+                  <li><a href="<%= t('social.github') %>">
+                      <i class="im im-github" aria-hidden="true"></i>
+                      <span>Github</span>
                   </a></li>
-                  <li><a href="#0">
+                  <li><a href="<%= t('social.twitter') %>">
                       <i class="im im-twitter" aria-hidden="true"></i>
                       <span>Twitter</span>
                   </a></li>
-                  <li><a href="#0">
+                  <li><a href="<%= t('social.instagram') %>">
                       <i class="im im-instagram" aria-hidden="true"></i>
                       <span>Instagram</span>
                   </a></li>
-                  <li><a href="#0">
-                      <i class="im im-behance" aria-hidden="true"></i>
-                      <span>Behance</span>
-                  </a></li>
-                  <li><a href="#0">
-                      <i class="im im-pinterest" aria-hidden="true"></i>
-                      <span>Pinterest</span>
+                  <li><a href="<%= t('social.linkedin') %>">
+                      <i class="im im-linkedin" aria-hidden="true"></i>
+                      <span>Linkedin</span>
                   </a></li>
               </ul>
 
@@ -142,18 +60,12 @@
       <div class="row footer-bottom">
 
           <div class="col-twelve">
-              <div class="copyright">
-                  <span>© Copyright Hola 2017</span>
-                  <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>
-              </div>
-
               <div class="go-top">
               <a class="smoothscroll" title="Back to Top" href="#home"><i class="im im-arrow-up" aria-hidden="true"></i></a>
               </div>
           </div>
 
       </div> <!-- end footer-bottom -->
-
   </footer> <!-- end footer -->
 
 

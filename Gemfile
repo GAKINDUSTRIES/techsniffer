@@ -24,6 +24,7 @@ gem 'rack-cors', '~> 0.4.0'
 gem 'sendgrid', '~> 1.2.4'
 gem 'tilt', '~> 2.0.7'
 gem 'rails_admin', '~> 1.3'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'bullet', '~> 5.5.1'

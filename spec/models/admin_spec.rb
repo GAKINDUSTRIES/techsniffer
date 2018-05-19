@@ -23,12 +23,13 @@
 #  happy_clients          :integer          not null
 #  phone                  :string           not null
 #  address                :string           not null
-#  city                   :string           not null
+#  city_code              :string           not null
 #  zipcode                :string           not null
 #  country_code           :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  brief_bio              :string           not null
+#  neighborhood           :string
 #
 # Indexes
 #
@@ -55,7 +56,8 @@ describe Admin do
     it { should validate_presence_of(:happy_clients) }
     it { should validate_presence_of(:phone) }
     it { should validate_presence_of(:address) }
-    it { should validate_presence_of(:city) }
+    it { should validate_presence_of(:city_code) }
+    it { should validate_presence_of(:neighborhood) }
     it { should validate_presence_of(:zipcode) }
     it { should validate_presence_of(:country_code) }
   end

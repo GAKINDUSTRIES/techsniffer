@@ -23,12 +23,13 @@
 #  happy_clients          :integer          not null
 #  phone                  :string           not null
 #  address                :string           not null
-#  city                   :string           not null
+#  city_code              :string           not null
 #  zipcode                :string           not null
 #  country_code           :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  brief_bio              :string           not null
+#  neighborhood           :string
 #
 # Indexes
 #
@@ -59,7 +60,8 @@ class Admin < ApplicationRecord
             :happy_clients,
             :phone,
             :address,
-            :city,
+            :city_code,
+            :neighborhood,
             :zipcode,
             :country_code, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }

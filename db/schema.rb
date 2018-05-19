@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516001443) do
+ActiveRecord::Schema.define(version: 20180519223237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,13 @@ ActiveRecord::Schema.define(version: 20180516001443) do
     t.integer "happy_clients", null: false
     t.string "phone", null: false
     t.string "address", null: false
-    t.string "city", null: false
+    t.string "city_code", null: false
     t.string "zipcode", null: false
     t.string "country_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "brief_bio", null: false
+    t.string "neighborhood"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -94,6 +95,17 @@ ActiveRecord::Schema.define(version: 20180516001443) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "subject"
+    t.string "message", null: false
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_messages_on_admin_id"
   end
 
   create_table "recommendations", force: :cascade do |t|

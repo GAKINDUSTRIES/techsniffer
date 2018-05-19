@@ -406,6 +406,7 @@ DEPENDENCIES
   fog-aws (~> 2.0.0)
   haml-rails (~> 1.0.0)
   jbuilder (~> 2.7.0)
+  jquery-rails
   koala (~> 1.10.1)
   letter_opener (~> 1.4.1)
   listen (~> 3.0.5)

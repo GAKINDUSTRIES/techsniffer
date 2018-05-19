@@ -35,8 +35,9 @@ module AdminRailsAdmin
         field :happy_clients
         field :phone
         field :address
-        field :city
+        field :neighborhood
         field :zipcode
+        field :city_code
         field :country_code
       end
     end
