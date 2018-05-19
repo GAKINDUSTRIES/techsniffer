@@ -8,10 +8,13 @@
 #  recommender_name    :string
 #  relationship        :integer
 #  subject             :string
-#  recommendation_id   :integer          not null
+#  recommendation_id   :integer
 #  admin_id            :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  recommender_avatar  :string
+#  recommender_role    :string
+#  recommender_company :string
 #
 # Indexes
 #

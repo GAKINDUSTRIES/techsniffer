@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415185127) do
+ActiveRecord::Schema.define(version: 20180519223237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,18 @@ ActiveRecord::Schema.define(version: 20180415185127) do
     t.string "username", null: false
     t.string "website", null: false
     t.string "avatar", null: false
-    t.string "bio", null: false
+    t.string "extended_bio", null: false
     t.integer "projects_completed", null: false
     t.integer "happy_clients", null: false
     t.string "phone", null: false
     t.string "address", null: false
-    t.string "city", null: false
+    t.string "city_code", null: false
     t.string "zipcode", null: false
     t.string "country_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "brief_bio", null: false
+    t.string "neighborhood"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -57,8 +59,10 @@ ActiveRecord::Schema.define(version: 20180415185127) do
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "summary", null: false
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["published"], name: "index_articles_on_published"
+    t.index ["published_at"], name: "index_articles_on_published_at"
     t.index ["slug"], name: "index_articles_on_slug"
   end
 
@@ -93,6 +97,17 @@ ActiveRecord::Schema.define(version: 20180415185127) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "subject"
+    t.string "message", null: false
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_messages_on_admin_id"
+  end
+
   create_table "recommendations", force: :cascade do |t|
     t.string "message"
     t.string "recommendation_text"
@@ -103,6 +118,9 @@ ActiveRecord::Schema.define(version: 20180415185127) do
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "recommender_avatar"
+    t.string "recommender_role"
+    t.string "recommender_company"
     t.index ["admin_id"], name: "index_recommendations_on_admin_id"
     t.index ["recommendation_id"], name: "index_recommendations_on_recommendation_id"
   end
