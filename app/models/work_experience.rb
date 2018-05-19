@@ -18,7 +18,7 @@
 #
 
 class WorkExperience < ApplicationRecord
-  include WorkExperienceAdmin
+  default_scope -> { order(:start_at) }
 
   belongs_to :admin
 

@@ -18,16 +18,18 @@
 #  username               :string           not null
 #  website                :string           not null
 #  avatar                 :string           not null
-#  bio                    :string           not null
+#  extended_bio           :string           not null
 #  projects_completed     :integer          not null
 #  happy_clients          :integer          not null
 #  phone                  :string           not null
 #  address                :string           not null
-#  city                   :string           not null
+#  city_code              :string           not null
 #  zipcode                :string           not null
 #  country_code           :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  brief_bio              :string           not null
+#  neighborhood           :string
 #
 # Indexes
 #
@@ -43,12 +45,14 @@ FactoryBot.define do
     email              { Faker::Internet.email }
     website            { Faker::Internet.url }
     avatar             { Rails.root.join('spec/support/blank.jpg').open }
-    bio                { Faker::Lorem.paragraph }
+    extended_bio       { Faker::Lorem.paragraph }
+    brief_bio          { Faker::Lorem.paragraph }
     projects_completed { 150 }
     happy_clients      { 350 }
     phone              { Faker::PhoneNumber.cell_phone }
     address            { Faker::Address.street_address }
-    city               { Faker::Address.city }
+    city_code          { Faker::Address.city }
+    neighborhood       { Faker::Address.city }
     zipcode            { Faker::Address.zip_code }
     country_code       { Faker::Address.country_code }
     password           { Devise.friendly_token[0, 20] }

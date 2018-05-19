@@ -14,16 +14,21 @@
 #  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  summary            :string           not null
 #
 # Indexes
 #
-#  index_articles_on_category_id  (category_id)
-#  index_articles_on_published    (published)
-#  index_articles_on_slug         (slug)
+#  index_articles_on_category_id   (category_id)
+#  index_articles_on_published     (published)
+#  index_articles_on_published_at  (published_at)
+#  index_articles_on_slug          (slug)
 #
 
 class Article < ApplicationRecord
+  scope :latest, -> { order(published_at: :desc).first(4) }
+
   validates :title, presence: true
+  validates :summary, presence: true
   validates :page_header, presence: true
   validates :slug, presence: true, uniqueness: true
 
