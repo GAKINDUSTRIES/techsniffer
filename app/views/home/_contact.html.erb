@@ -1,0 +1,71 @@
+<section id="contact" class="s-contact target-section">
+  <div class="overlay"></div>
+  <div class="row narrow section-intro">
+    <div class="col-full">
+      <h3>Contact</h3>
+      <h1>Say Hello.</h1>
+      <p class="lead"> Feel that tingling in your fingertips? That’s the magnetic urge to contact me. Get in touch is easy!</p>
+    </div>
+  </div>
+
+  <div class="row contact__main">
+    <div class="col-eight tab-full contact__form">
+      <%= form_for message, url: {action: :create, controller: :messages}, html: {name: "contactForm", id: "contactForm", placeholder: "name"}, remote: true do |f| %>
+        <fieldset>
+        <div class="form-field">
+        <%= f.text_field :name, placeholder: "Name", class: "full-width", minlength: "2", "aria-required"=> "true", required: "" %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :email, type: :email, placeholder: "Email", class: "full-width", "aria-required"=> "true", required: "" %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :subject, placeholder: "Subject", class: "full-width", required: "" %>
+        </div>
+        <div class="form-field">
+          <%= f.text_area :message, placeholder: "Message", class: "full-width", "aria-required"=> "true", rows: "10", cols: "50", required: ""%>
+        </div>
+        <div class="form-field">
+          <%= f.button "Submit", class: "full-width btn--primary", type: :submit %>
+          <div class="submit-loader">
+            <div class="text-loader">Sending...</div>
+            <div class="s-loader">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+          </div>
+        </div>
+
+        </fieldset>
+      <% end %>
+
+      <!-- contact-warning -->
+      <div class="message-warning">
+        Something went wrong. Please try again.
+      </div>
+
+      <!-- contact-success -->
+      <div class="message-success">
+        Your message was sent, thank you!<br>
+      </div>
+
+    </div>
+    <div class="col-four tab-full contact__infos">
+      <h4 class="h06">Phone</h4>
+      <p<%= admin.phone %>
+      </p>
+
+      <h4 class="h06">Email</h4>
+      <p><%= admin.email %></p>
+
+      <h4 class="h06">Address</h4>
+      <p>
+      <%= admin.address %><br>
+      <%= admin.neighborhood %>, <%= admin.city_code %><br>
+      <%= admin.zipcode %> <%= admin.country_code %>
+      </p>
+    </div>
+
+  </div>
+
+</section> <!-- end s-contact -->
