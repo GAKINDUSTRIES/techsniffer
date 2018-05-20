@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
   end
 
   config.current_user_method(&:current_admin)
-  config.included_models = %w[Admin WorkExperience Skill]
+  config.included_models = %w[Admin WorkExperience Skill Recommendation]
 
   # Display empty fields
   config.compact_show_view = false

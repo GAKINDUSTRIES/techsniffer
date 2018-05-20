@@ -26,3 +26,22 @@ en:
       not_found: "Couldn't find the record"
       missing_param: 'A required param is missing'
       invalid_content_type: 'Invalid content type header'
+  meta:
+    title: "Guillermo Kuster | Developer | techsniffer"
+    description: "Programming blog"
+    keywords: "HTML,CSS,Ruby,JavaScript,Rails,app development,developer,blog"
+    author: "Guillermo Kuster"
+    type: "article"
+    distribution: "global"
+    viewport: "width=device-width, initial-scale=1"
+  page_hero:
+    greetings:
+      presentation: "I am"
+      title: "I am a Software engineer"
+      title2: "and full-stack dev"
+      title3: "based in Uruguay"
+  social:
+    github: "https://github.com/gakindustries"
+    twitter: "https://twitter.com/GAKuster"
+    instagram: "https://www.instagram.com/kuster.guille"
+    linkedin: "https://www.linkedin.com/in/guillermo-kuster"

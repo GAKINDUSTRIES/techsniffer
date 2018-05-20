@@ -1,0 +1,38 @@
+<section id="blog" class="s-blog target-section">
+
+  <div class="row narrow section-intro has-bottom-sep">
+    <div class="col-full">
+      <h3>Journal</h3>
+      <h1>Latest From The Blog.</h1>
+      <p class="lead">Take a look at the latest posts published.</p>
+    </div>
+  </div>
+
+  <div class="row blog-content">
+    <div class="col-full">
+
+      <div class="blog-list block-1-2 block-tab-full">
+      <% latest_articles.each do |article| %>
+        <article class="col-block">
+
+          <div class="blog-date">
+          <a href="blog-single.html"><%= article.published_date%></a>
+          </div>
+
+          <h2 class="h01"><a href="blog-single.html"><%= article.title %></a></h2>
+          <p><%= article.summary %></p>
+
+          <div class="blog-cat">
+              <a href="blog.html">Branding</a><a href="blog.html">Design</a>
+          </div>
+
+
+        </article>
+
+      <% end %>
+      </div> <!-- end blog-list -->
+
+    </div> <!-- end col-full -->
+  </div> <!-- end blog-content -->
+
+</section> <!-- end s-blog -->

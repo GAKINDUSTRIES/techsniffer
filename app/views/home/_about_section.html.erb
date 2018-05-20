@@ -1,0 +1,91 @@
+<section id="about" class="s-about target-section">
+
+  <div class="row narrow section-intro has-bottom-sep">
+    <div class="col-full text-center">
+      <h3>About</h3>
+      <div class="about-avatar">
+        <a class="about-avatar-site" href="#0"><%= image_tag admin.avatar.url, alt: "Avatar" %></a>
+      </div>
+      <h1>More About Me</h1>
+      <p class="lead"><%= admin.brief_bio %></p>
+    </div>
+  </div>
+
+  <div class="row about-content">
+
+    <div class="col-six tab-full left">
+      <h3>Howdy!</h3>
+      <p><%= admin.extended_bio %></p>
+    </div>
+
+    <div class="col-six tab-full right">
+      <h3>I've Got Some skills.</h3>
+
+      <ul class="skill-bars">
+        <% admin.skills.each do |skill| %>
+          <li>
+          <div class="progress percent<%= skill.percentage %>">
+            <span><%= skill.percentage %>%</span>
+          </div>
+            <strong><%= skill.name %></strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div> <!-- end about-content -->
+
+  <div class="row about-content about-content--timeline">
+
+    <div class="col-full text-center">
+      <h3>My Work Experience.</h3>
+    </div>
+
+    <% left_elements = admin.work_experiences.count / 2 %>
+    <% right_elements = admin.work_experiences.count - left_elements %>
+
+    <div class="col-six tab-full left">
+      <div class="timeline">
+
+        <% admin.work_experiences.last(left_elements).reverse.each do |work_experience| %>
+        <div class="timeline__block">
+          <div class="timeline__bullet"></div>
+          <div class="guille">
+          <div class="timeline__header">
+            <p class="timeline__timeframe"><%= work_experience.time_period %></p>
+            <h3><%= work_experience.company %></h3>
+            <h5><%= work_experience.position %></h5>
+          </div>
+          <div class="timeline__desc">
+            <p><%= work_experience.description %></p>
+          </div>
+          </div>
+        </div> <!-- end timeline__block -->
+        <% end %>
+
+      </div> <!-- end timeline -->
+    </div> <!-- end left -->
+
+    <div class="col-six tab-full right">
+      <div class="timeline">
+
+        <% admin.work_experiences.first(right_elements).reverse.each do |work_experience| %>
+        <div class="timeline__block">
+          <div class="timeline__bullet"></div>
+          <div class="timeline__header">
+          <p class="timeline__timeframe"><%= work_experience.time_period %></p>
+          <h3><%= work_experience.company %></h3>
+          <h5><%= work_experience.position %></h5>
+          </div>
+          <div class="timeline__desc">
+          <p><%= work_experience.description %></p>
+          </div>
+        </div> <!-- end timeline__block -->
+        <% end %>
+
+      </div> <!-- end timeline -->
+    </div> <!-- end right -->
+
+  </div> <!-- end about-content timeline -->
+
+</section> <!-- end about -->
