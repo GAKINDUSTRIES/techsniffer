@@ -15,6 +15,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  summary            :string           not null
+#  bio                :text
 #
 # Indexes
 #

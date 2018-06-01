@@ -18,3 +18,7 @@
 //= require modernizr.js
 //= require pace.min.js
 //= require_tree .
+//= require froala_editor.min.js
+
+$('selector').froalaEditor();
+

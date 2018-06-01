@@ -15,6 +15,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  summary            :string           not null
+#  bio                :text
 #
 # Indexes
 #
@@ -25,6 +26,8 @@
 #
 
 class Article < ApplicationRecord
+  include ArticleAdmin
+
   scope :latest, -> { order(published_at: :desc).first(4) }
 
   validates :title, presence: true

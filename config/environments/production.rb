@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.precompile += %w[
-    active_admin.js
-    active_admin.css
+    rails_admin/custom/theming.css
+    rails_admin/custom/ui.js
   ]
 end

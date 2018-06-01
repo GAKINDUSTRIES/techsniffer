@@ -10,10 +10,13 @@
  *
  *
 
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
  *= require base.css
  *= require fonts.css
  *= require main.css
  *= require vendor.css
  *= require_self
  *= require_tree .
+ *= require font-awesome
  */
