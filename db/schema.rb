@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180822205437) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "summary", null: false
+    t.text "bio"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["published"], name: "index_articles_on_published"
     t.index ["published_at"], name: "index_articles_on_published_at"
