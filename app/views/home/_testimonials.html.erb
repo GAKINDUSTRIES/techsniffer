@@ -11,7 +11,7 @@
       <% admin.recommendations.each do |recommendation| %>
 
         <div class="testimonials__slide">
-          <%= image_tag recommendation.recommender_avatar, alt: "Author image", class: 'testimonials__avatar' %>
+          <%= recommendation.display_avatar %>
           <p><%= recommendation.recommendation_text %></p>
           <div class="testimonials__author h06">
             <%= recommendation.recommender_name %>

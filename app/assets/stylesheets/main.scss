@@ -2707,8 +2707,8 @@ html.no-csstransitions .home-content__main {
     transform: translate3d(0, 0, 0);
 }
 
-
 /* -------------------------------------------------------------------
+
  * responsive:
  * works
  * ------------------------------------------------------------------- */
@@ -2768,6 +2768,19 @@ html.no-csstransitions .home-content__main {
  * # testimonials - (_site-layout.scss)
  *
  * ------------------------------------------------------------------- */
+
+.testimonials-initials {
+  box-shadow: 0 0 0 0.9rem rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  font-size: 3.2rem;
+  height: 6.6rem;
+  left: .9rem;
+  outline: none;
+  position: absolute;
+  text-align: center;
+  top: 4.8rem;
+  width: 6.6rem;
+}
 
 .s-testimonials {
     background-color: #0D0A0B;
