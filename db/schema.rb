@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180520040413) do
+ActiveRecord::Schema.define(version: 20180601033123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180520040413) do
     t.datetime "updated_at", null: false
     t.string "summary", null: false
     t.text "bio"
+    t.string "hero_image"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["published"], name: "index_articles_on_published"
     t.index ["published_at"], name: "index_articles_on_published_at"

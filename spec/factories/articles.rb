@@ -16,6 +16,7 @@
 #  updated_at         :datetime         not null
 #  summary            :string           not null
 #  bio                :text
+#  hero_image         :string
 #
 # Indexes
 #

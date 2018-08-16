@@ -4,6 +4,7 @@ module ArticleAdmin
   included do
     rails_admin do
       edit do
+        field :hero_image
         field :bio, :froala do
           config_options do
             {
