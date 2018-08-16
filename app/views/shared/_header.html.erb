@@ -1,0 +1,19 @@
+<header class="s-header">
+
+  <div class="header-logo">
+    <%= link_to image_tag("logo.png"), root_path(), class: "site-logo" %>
+  </div>
+
+  <nav class="header-nav-wrap">
+  <ul class="header-nav">
+    <li><%= link_to "Home", formatted_link("home"), class: "smoothscroll" %></li>
+    <li><%= link_to "About", formatted_link("about"), class: "smoothscroll" %></li>
+    <li><%= link_to "Testimonials", formatted_link("testimonials"), class: "smoothscroll" %></li>
+    <li><%= link_to "Blog", formatted_link("blog"), class: "smoothscroll" %></li>
+    <li><%= link_to "Contact", formatted_link("contact"), class: "smoothscroll" %></li>
+  </ul>
+  </nav>
+
+  <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+</header>

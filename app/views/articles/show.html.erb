@@ -1,4 +1,37 @@
 <body id="top">
+
+  <%= render "shared/header" %>
+    <article class="blog-single">
+
+        <!-- page header/blog hero
+        ================================================== -->
+        <div class="page-header page-header--single page-hero" style="background-image:url('<%= article.hero_image.url %>')">
+
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <div class="page-header__info">
+                        <div class="page-header__cat">
+                            <a href="#0">Branding</a><a href="#0">Design</a>
+                        </div>
+                    </div>
+                    <h1 class="page-header__title">
+                        <a href="#0" title="">
+                            Using Patterns in your Branding.
+                        </a>
+                    </h1>
+                    <ul class="page-header__meta">
+                        <li class="date">September 16, 2017</li>
+                        <li class="author">
+                            By
+                            <span>Jonathan Doe</span>
+                        </li>
+                    </ul>
+
+                </article>
+            </div>
+
+        </div> <!-- end page-header -->
+
         <div class="row blog-content">
             <div class="col-full blog-content__main">
 
@@ -284,10 +317,5 @@ code {
         </div> <!-- end row comments -->
     </div> <!-- end comments-wrap -->
 
-
-        <div id="preloader">
-            <div id="loader"></div>
-        </div>
-
-
+  <%= render "shared/footer" %>
 </body>

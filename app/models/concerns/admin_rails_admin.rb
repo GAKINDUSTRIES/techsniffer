@@ -3,7 +3,7 @@ module AdminRailsAdmin
 
   included do
     rails_admin do
-      configure :bio, :text do
+      configure :extended_bio, :text do
         html_attributes rows: 20, cols: 50
       end
 
@@ -25,12 +25,13 @@ module AdminRailsAdmin
         field :website
         field :password
         field :avatar
-        field :bio
+        field :brief_bio
+        field :extended_bio
         field :projects_completed
         field :happy_clients
         field :phone
         field :address
-        field :city
+        field :city_code
         field :zipcode
         field :country_code
       end

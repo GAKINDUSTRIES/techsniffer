@@ -12,70 +12,12 @@
   </head>
 
   <body>
-    <header class="s-header">
-
-      <div class="header-logo">
-      <a class="site-logo" href="#"><%= image_tag "logo.png" %></a>
-      </div>
-
-      <nav class="header-nav-wrap">
-      <ul class="header-nav">
-        <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-        <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-        <li><a class="smoothscroll"  href="#testimonials" title="testimonials">Testimonials</a></li>
-        <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
-        <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
-      </ul>
-      </nav>
-
-      <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header>
 
     <%= yield %>
 
-      <!-- footer
-      ================================================== -->
-      <footer>
-        <div class="row">
-          <div class="col-full">
-
-            <div class="footer-logo">
-              <a class="footer-site-logo" href="#0"><%= image_tag "avatar.png", alt: "Home Page" %></a>
-            </div>
-
-            <ul class="footer-social">
-              <li><a href="<%= t('social.github') %>">
-                <i class="im im-github" aria-hidden="true"></i>
-                <span>Github</span>
-              </a></li>
-              <li><a href="<%= t('social.twitter') %>">
-                <i class="im im-twitter" aria-hidden="true"></i>
-                <span>Twitter</span>
-              </a></li>
-              <li><a href="<%= t('social.instagram') %>">
-                <i class="im im-instagram" aria-hidden="true"></i>
-                <span>Instagram</span>
-              </a></li>
-              <li><a href="<%= t('social.linkedin') %>">
-                <i class="im im-linkedin" aria-hidden="true"></i>
-                <span>Linkedin</span>
-              </a></li>
-            </ul>
-
-          </div>
-        </div>
-
-        <div class="row footer-bottom">
-
-          <div class="col-twelve">
-            <div class="go-top">
-            <a class="smoothscroll" title="Back to Top" href="#home"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-            </div>
-          </div>
-
-        </div> <!-- end footer-bottom -->
-      </footer> <!-- end footer -->
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
 
   </body>
 </html>

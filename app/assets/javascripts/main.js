@@ -333,18 +333,35 @@
     var ssSmoothScroll = function() {
 
         $('.smoothscroll').on('click', function (e) {
+          if (location.pathname == '/') {
             var target = this.hash,
             $target    = $(target);
 
             e.preventDefault();
             e.stopPropagation();
+          }
+          $('html, body').stop().animate({
+              'scrollTop': $target.offset().top
+          }, cfg.scrollDuration, 'swing', function () {
+              window.location.hash = target;
+          });
+        });
+    };
 
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing', function () {
-                window.location.hash = target;
-            });
 
+   /* Smooth Scrolling to top
+    * ------------------------------------------------------ */
+    var ssSmoothScrollTop = function() {
+
+        $('.smoothscrolltop').on('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          $('html, body').stop().animate({
+              'scrollTop': 0
+          }, cfg.scrollDuration, 'swing', function () {
+              window.location.hash = target;
+          });
         });
     };
 
@@ -439,6 +456,7 @@
           ssWaypoints();
           ssStatCount();
           ssSmoothScroll();
+          ssSmoothScrollTop();
           ssPlaceholder();
           ssAlertBoxes();
           ssContactForm();

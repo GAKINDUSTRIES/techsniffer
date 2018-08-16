@@ -38,8 +38,7 @@ en:
     greetings:
       presentation: "I am"
       title: "I am a Software engineer"
-      title2: "and full-stack dev"
-      title3: "based in Uruguay"
+      title2: "based in Uruguay"
   social:
     github: "https://github.com/gakindustries"
     twitter: "https://twitter.com/GAKuster"
