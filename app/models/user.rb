@@ -37,6 +37,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
+  mount_uploader :avatar, AvatarUploader
+
+  has_many :comments, dependent: :destroy
+
   validates :uid, uniqueness: { scope: :provider }
 
   before_validation :init_uid

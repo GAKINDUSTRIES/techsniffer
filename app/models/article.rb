@@ -43,6 +43,10 @@ class Article < ApplicationRecord
 
   before_create :assign_slug
 
+  def to_param
+    slug
+  end
+
   private
 
   def assign_slug

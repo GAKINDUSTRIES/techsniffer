@@ -45,6 +45,12 @@ describe User do
     end
   end
 
+  describe 'Associations' do
+    subject { build :user }
+
+    it {should have_many(:comments).dependent(:destroy)}
+  end
+
   context 'when was created with regular login' do
     let!(:user) { create(:user) }
     let(:full_name) { user.full_name }
