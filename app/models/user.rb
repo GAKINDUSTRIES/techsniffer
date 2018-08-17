@@ -37,13 +37,33 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
-  mount_uploader :avatar, AvatarUploader
+  # reanable omniauthable removed
+  # https://github.com/lynndylanhurley/devise_token_auth/blob/v0.1.36/app/models/devise_token_auth/concerns/user.rb#L23
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :comments, dependent: :destroy
 
   validates :uid, uniqueness: { scope: :provider }
 
   before_validation :init_uid
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    unless user
+      user = User.create first_name: data['first_name'],
+                         last_name: data['last_name'],
+                         avatar: data['image'],
+                         email: data['email'],
+                         provider: 'Google',
+                         password: Devise.friendly_token[0,20],
+                         uid: data['email']
+
+    end
+    user
+  end
+
 
   def full_name
     return username unless first_name.present?

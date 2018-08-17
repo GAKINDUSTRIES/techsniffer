@@ -27,6 +27,7 @@ gem 'rails_admin'
 gem 'jquery-rails', '~> 4.3.1'
 gem "wysiwyg-rails"
 gem "font-awesome-rails"
+gem 'omniauth-google-oauth2', '~> 0.2.2'
 
 group :development, :test do
   gem 'bullet', '~> 5.5.1'

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins
+  devise_for :users, skip: [:sessions,:registrations], controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   mount_devise_token_auth_for 'User', at: '/api/v1/users', controllers: {

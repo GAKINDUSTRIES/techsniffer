@@ -13,7 +13,7 @@
           <li class="depth-1 comment">
 
             <div class="comment__avatar">
-              <%= image_tag commenter.avatar.url, height: 50, width: 50, class: avatar %>
+              <%= image_tag commenter.avatar.url, height: 50, width: 50, class: "avatar" %>
             </div>
 
             <div class="comment__content">
@@ -40,7 +40,45 @@
      <!-- respond -->
      <div class="respond">
 
+      <% if user_signed_in? %>
+        <div class="comment__avatar">
+            <%= image_tag current_user.avatar, height: 50, width: 50, class: "avatar" %>
+            <cite><%= current_user.full_name %></cite>
+        </div>
+      <% else %>
+
+        <form name="contactForm" id="contactForm" method="post" action="">
+          <fieldset>
+
+          <div class="message form-field">
+          <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message" disabled></textarea>
+          </div>
+
+          <% if user_signed_in? %>
+            <button type="submit" class="submit btn--primary">Submit</button>
+          <% end %>
+
+          </fieldset>
+        </form> <!-- Form End -->
+
+
+      <% end %>
+
+
+
+
+
+
+      <% if user_signed_in? %>
+        <div class="comment__avatar">
+            <%= image_tag current_user.avatar, height: 50, width: 50, class: "avatar" %>
+            <cite><%= current_user.full_name %></cite>
+        </div>
+      <% end %>
+
        <h3>Leave a Comment</h3>
+
+       <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path.concat("?state=#{request.original_url}") %>
 
         <form name="contactForm" id="contactForm" method="post" action="">
           <fieldset>
@@ -49,7 +87,9 @@
           <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message"></textarea>
           </div>
 
-          <button type="submit" class="submit btn--primary">Submit</button>
+          <% if user_signed_in? %>
+            <button type="submit" class="submit btn--primary">Submit</button>
+          <% end %>
 
           </fieldset>
         </form> <!-- Form End -->
