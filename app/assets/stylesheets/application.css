@@ -16,6 +16,8 @@
  *= require fonts.css
  *= require main.css
  *= require vendor.css
+ *= require remodal.css
+ *= require remodal-default-theme.css
  *= require_self
  *= require_tree .
  *= require font-awesome

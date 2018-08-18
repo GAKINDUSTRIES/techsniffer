@@ -1,0 +1,24 @@
+<div class="remodal" data-remodal-id="modal">
+
+  <button data-remodal-action="close" class="close-btn">
+    <%= image_tag "closebt.png" %>
+  </button>
+
+  <h3>Create an account to write a response.</h1>
+
+  <p>Build on this story’s ideas with your own – responses keep the conversation moving.</p>
+
+  <%= link_to user_google_oauth2_omniauth_authorize_path.concat("?state=#{request.original_url}"), class: "loginBtn loginBtn--google" do %>
+    <i class="im im-google-plus" aria-hidden="true"></i>
+    <span>Sign in with Google</span>
+  <% end %>
+
+  <br>
+
+  <%= link_to user_google_oauth2_omniauth_authorize_path.concat("?state=#{request.original_url}"), class: "loginBtn loginBtn--github" do %>
+    <i class="im im-github" aria-hidden="true"></i>
+    <span>Sign in with Github</span>
+  <% end %>
+
+</div>
+

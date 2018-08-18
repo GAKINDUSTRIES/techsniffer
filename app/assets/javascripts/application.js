@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require plugins
 //= require axios.js
+//= require remodal.min.js
 //= require main.js
 //= require modernizr.js
 //= require pace.min.js
