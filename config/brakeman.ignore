@@ -1,0 +1,25 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Redirect",
+      "warning_code": 18,
+      "fingerprint": "08272738242044a4c4a00a222cc9321de30e5ac2aa4254eea4729637943f6f48",
+      "message": "Possible unprotected redirect",
+      "file": "app/controllers/users/omniauth_callbacks_controller.rb",
+      "line": 12,
+      "link": "http://brakemanscanner.org/docs/warning_types/redirect/",
+      "code": "redirect_to(params[:state])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Users::OmniauthCallbacksController",
+        "method": "google_oauth2"
+      },
+      "user_input": "params[:state]",
+      "confidence": "High",
+      "note": ""
+    }
+  ],
+  "updated": "2018-08-19 16:37:47 -0300",
+  "brakeman_version": "3.4.1"
+}

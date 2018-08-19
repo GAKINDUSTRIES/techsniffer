@@ -43,18 +43,29 @@
       <h3>Leave a Comment</h3>
       <% if user_signed_in? %>
 
-        <div class="comment__avatar">
-            <%= image_tag current_user.avatar, height: 50, width: 50, class: "avatar" %>
-            <cite><%= current_user.full_name %></cite>
+        <div class="user-box">
+          <div>
+            <%= image_tag current_user.avatar, height: 50, width: 50, class: "user-box__avatar" %>
+          </div>
+          <div class="user-box__info">
+            <div class="user-box__name">
+              <cite><%= current_user.full_name %></cite>
+            </div>
+            <div class="user-box__logout">
+              <%= link_to "Logout", destroy_web_user_session_path(), method: :post %>
+            </div>
+          </div>
+
         </div>
 
         <form name="contactForm" id="contactForm" method="post" action="">
           <fieldset>
 
-          <div class="message form-field">
-          <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message"></textarea>
-          </div>
+            <div class="message form-field">
+              <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message"></textarea>
+            </div>
             <button type="submit" class="submit btn--primary">Submit</button>
+
           </fieldset>
         </form> <!-- Form End -->
 
@@ -67,7 +78,7 @@
             <fieldset>
 
             <div class="message form-field">
-            <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message" disabled></textarea>
+              <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message" disabled></textarea>
             </div>
 
             </fieldset>

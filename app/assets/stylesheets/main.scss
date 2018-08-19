@@ -886,6 +886,39 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 
+/* -------------------------------------------------------------------
+ * ## user box - (_user-box.scss)
+ * ------------------------------------------------------------------- */
+
+.user-box {
+    align-items: center;
+    display: flex;
+    margin-top: 5%;
+}
+
+.user-box__avatar {
+    border-radius: 100%;
+    width: 6.7;
+}
+
+.user-box__info {
+    margin-left: 3%;
+}
+
+.user-box__name {
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1.8rem;
+    font-style: normal;
+    color: #0D0A0B;
+}
+
+.user-box__logout {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
 
 /* -------------------------------------------------------------------
  * ## alert box - (_alert-box.scss)

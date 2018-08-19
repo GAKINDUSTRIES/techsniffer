@@ -70,7 +70,9 @@ TooManyStatements:
   max_statements: 12
 UncommunicativeMethodName:
   enabled: true
-  exclude: []
+  exclude: [
+    'Users::OmniauthCallbacksController#google_oauth2'
+  ]
   reject:
   - !ruby/regexp /^[a-z]$/
   - !ruby/regexp /[0-9]$/

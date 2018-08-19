@@ -8,6 +8,10 @@ class ArticleDecorator < Draper::Decorator
   def comment_count
     number_of_comments = comments.count
 
-    number_of_comments.zero? ? "No comments yet. Be the first one!" : "#{number_of_comments} Comments"
+    if number_of_comments.zero?
+      'No comments yet. Be the first one!'
+    else
+      "#{number_of_comments} Comments"
+    end
   end
 end

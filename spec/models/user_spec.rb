@@ -48,7 +48,7 @@ describe User do
   describe 'Associations' do
     subject { build :user }
 
-    it {should have_many(:comments).dependent(:destroy)}
+    it { should have_many(:comments).dependent(:destroy) }
   end
 
   context 'when was created with regular login' do

@@ -49,21 +49,21 @@ class User < ApplicationRecord
 
   def self.from_omniauth(access_token)
     data = access_token.info
-    user = User.where(email: data['email']).first
+    email_data = data['email']
+    user = User.where(email: email_data).first
 
     unless user
       user = User.create first_name: data['first_name'],
                          last_name: data['last_name'],
                          avatar: data['image'],
-                         email: data['email'],
+                         email: email_data,
                          provider: 'Google',
-                         password: Devise.friendly_token[0,20],
-                         uid: data['email']
+                         password: Devise.friendly_token[0, 20],
+                         uid: email_data
 
     end
     user
   end
-
 
   def full_name
     return username unless first_name.present?
