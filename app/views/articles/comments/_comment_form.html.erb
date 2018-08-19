@@ -1,0 +1,11 @@
+<%= form_for comment, url: article_comments_path(article), remote: true, html: { id: "commentForm", name: "commentForm" } do |f| %>
+  <fieldset>
+
+    <div class="message form-field">
+      <%= f.text_area :message, id: "cMessage", class: "full-width", placeholder: "Your Message" %>
+    </div>
+
+    <%= f.button "Submit", class: "submit btn--primary", type: :submit %>
+
+  </fieldset>
+<% end %>

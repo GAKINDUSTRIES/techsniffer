@@ -10,7 +10,7 @@
 
   <div class="row contact__main">
     <div class="col-eight tab-full contact__form">
-      <%= form_for message, url: {action: :create, controller: :messages}, html: {name: "contactForm", id: "contactForm", placeholder: "name"}, remote: true do |f| %>
+      <%= form_for message, url: { action: :create, controller: :messages }, html: { name: "contactForm", id: "contactForm", placeholder: "name" }, remote: true do |f| %>
         <fieldset>
         <div class="form-field">
         <%= f.text_field :name, placeholder: "Name", class: "full-width", minlength: "2", "aria-required"=> "true", required: "" %>

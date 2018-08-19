@@ -3,39 +3,7 @@
   <div id="comments" class="row">
     <div class="col-full">
 
-      <h3><%= article.comment_count %></h3>
-
-     <!-- commentlist -->
-     <ol class="commentlist">
-
-       <% comments.each do |comment| %>
-         <% commenter = comment.user %>
-          <li class="depth-1 comment">
-
-            <div class="comment__avatar">
-              <%= image_tag commenter.avatar.url, height: 50, width: 50, class: "avatar" %>
-            </div>
-
-            <div class="comment__content">
-
-              <div class="comment__info">
-                <cite><%= commenter.full_name %></cite>
-
-                <div class="comment__meta">
-                  <time class="comment__time"><%= comment.creation_time %></time>
-                </div>
-              </div>
-
-              <div class="comment__text">
-                <p><%= comment.message %></p>
-              </div>
-
-            </div>
-
-          </li>
-        <% end %>
-
-      </ol> <!-- Commentlist End -->
+     <%= render "articles/comments/comment_list" %>
 
      <!-- respond -->
      <div class="respond">
@@ -58,16 +26,7 @@
 
         </div>
 
-        <form name="contactForm" id="contactForm" method="post" action="">
-          <fieldset>
-
-            <div class="message form-field">
-              <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="submit btn--primary">Submit</button>
-
-          </fieldset>
-        </form> <!-- Form End -->
+        <%= render "articles/comments/comment_form" %>
 
       <% else %>
 

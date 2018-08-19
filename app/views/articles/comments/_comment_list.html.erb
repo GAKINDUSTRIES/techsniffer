@@ -1,0 +1,30 @@
+<ol class="commentlist">
+ <h3><%= article.comment_count %></h3>
+ <% comments.each do |comment| %>
+   <% commenter = comment.user %>
+    <li class="depth-1 comment">
+
+      <div class="comment__avatar">
+        <%= image_tag commenter.avatar, height: 50, width: 50, class: "avatar" %>
+      </div>
+
+      <div class="comment__content">
+
+        <div class="comment__info">
+          <cite><%= commenter.full_name %></cite>
+
+          <div class="comment__meta">
+            <time class="comment__time"><%= comment.decorate.creation_time %></time>
+          </div>
+        </div>
+
+        <div class="comment__text">
+          <p><%= comment.message %></p>
+        </div>
+
+      </div>
+
+    </li>
+  <% end %>
+
+</ol> <!-- Commentlist End -->

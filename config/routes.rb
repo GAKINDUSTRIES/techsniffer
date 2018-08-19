@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   get '/', to: 'home#index', as: :root
   resources :messages, only: :create
-  resources :articles, only: %i[index show], param: :slug
+  resources :articles, only: %i[index show], param: :slug do
+    resources :comments, only: :create, module: :articles
+  end
 
   namespace :api do
     namespace :v1, defaults: { format: :json } do

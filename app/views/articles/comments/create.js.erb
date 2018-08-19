@@ -1,0 +1,2 @@
+$('#commentForm').replaceWith("<%= j render 'comment_form', comment: Comment.new %>")
+$('.commentlist').replaceWith("<%= j render 'comment_list', comments: @comments%>")

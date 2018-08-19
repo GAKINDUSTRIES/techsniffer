@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   helper_method :article
+  helper_method :comment
   helper_method :admin
   helper_method :comments
 
@@ -19,6 +20,10 @@ class ArticlesController < ApplicationController
 
   # TODO, paginate collection
   def comments
-    @comments ||= article.comments.includes(:user).ordered_by_date
+    @comments ||= article.comments.includes(:user).ordered_by_date.decorate
+  end
+
+  def comment
+    @comment ||= Comment.new
   end
 end
