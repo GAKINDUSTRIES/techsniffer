@@ -6,7 +6,12 @@ class ArticlesController < ApplicationController
 
   def show; end
 
-  def index; end
+  def index
+    @articles = Article.desc_order.page(params[:page]).decorate
+    @current_page = params[:page] || 0
+    @total_articles = Article.count
+    @per_page = Article.default_per_page
+  end
 
   private
 

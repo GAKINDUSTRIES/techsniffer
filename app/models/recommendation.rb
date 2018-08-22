@@ -8,7 +8,6 @@
 #  recommender_name    :string
 #  relationship        :integer
 #  subject             :string
-#  recommendation_id   :integer
 #  admin_id            :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
@@ -18,8 +17,7 @@
 #
 # Indexes
 #
-#  index_recommendations_on_admin_id           (admin_id)
-#  index_recommendations_on_recommendation_id  (recommendation_id)
+#  index_recommendations_on_admin_id  (admin_id)
 #
 
 class Recommendation < ApplicationRecord

@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<%= render "blog_list_hero" %>
+
+<section class="blog-content-wrap">
+
+  <div class="row blog-content">
+    <div class="col-full">
+
+      <div class="blog-list block-1-2 block-tab-full">
+
+        <% @articles.each do |article| %>
+          <article class="col-block">
+
+            <div class="blog-date">
+              <a href="blog-single.html"><%= article.published_date %></a>
+            </div>
+
+            <h2 class="h01"><a href="blog-single.html"><%= article.title %></a></h2>
+            <p><%= article.summary %></p>
+
+            <div class="blog-cat">
+              <a href="blog.html">Photography</a>
+            </div>
+
+          </article>
+        <% end %>
+
+      </div> <!-- end blog-list -->
+
+    </div> <!-- end col-full -->
+  </div> <!-- end blog-content -->
+
+  <%= render "pagination" %>
+
+</section>
+<%= render "shared/footer" %>

@@ -1,0 +1,27 @@
+<% main_article = @articles.to_a.shift %>
+<section class="page-header page-hero" style="background-image:url('<%= main_article.hero_image.url %>')">
+
+  <div class="row page-header__content">
+    <article class="col-full">
+      <div class="page-header__info">
+        <div class="page-header__cat">
+          <% main_article.tags.each do |tag| %>
+            <%= link_to tag, '' %>
+          <% end %>
+        </div>
+        <div class="page-header__date">
+          <%= main_article.published_date %>
+        </div>
+      </div>
+
+      <h1 class="page-header__title">
+        <%= link_to main_article.title, article_path(main_article) %>
+      </h1>
+      <p><%= main_article.summary %></p>
+      <p>
+        <%= link_to "Read More", article_path(main_article), class: "btn btn--stroke page-header__btn" %>
+      </p>
+    </article>
+  </div>
+
+</section>

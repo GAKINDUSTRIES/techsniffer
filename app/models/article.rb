@@ -29,9 +29,12 @@
 class Article < ApplicationRecord
   include ArticleAdmin
 
+  paginates_per 7
+
   mount_uploader :hero_image, AvatarUploader
 
-  scope :latest, -> { order(published_at: :desc).first(4) }
+  scope :desc_order, -> { order(published_at: :desc) }
+  scope :latest, -> { desc_order.first(4) }
 
   validates :title, presence: true
   validates :summary, presence: true

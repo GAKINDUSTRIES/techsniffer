@@ -868,6 +868,14 @@ input[type="button"].btn--primary:focus {
     color: #862121;
 }
 
+.btn--stroke__disabled, .btn--stroke__disabled.btn--stroke {
+  &:hover, &:focus, &:active, &:visited {
+      color: gray;
+      border: 0.3rem solid gray;
+      cursor: default;
+  }
+}
+
 .btn--pill, button.btn--pill {
     padding-left: 3rem !important;
     padding-right: 3rem !important;

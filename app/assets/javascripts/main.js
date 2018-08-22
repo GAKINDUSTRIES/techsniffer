@@ -424,21 +424,24 @@
         });
     };
 
-    var getCommits = function() {
-        var proxyUrl = 'https://urlreq.appspot.com/req?method=GET&url='
-        var url = 'https://github.com/gakindustries'
-        return new Promise((resolve, reject) => {
-            axios.get(proxyUrl + url).then(res => {
+    var getCommits = function getCommits() {
+        var proxyUrl = 'https://urlreq.appspot.com/req?method=GET&url=';
+        var url = 'https://github.com/gakindustries';
+        return new Promise(function (resolve, reject) {
+          debugger;
+            axios.get(proxyUrl + url).then(function (res) {
+                debugger;
                 var parsed = $(res.data).find('div.js-contribution-graph > h2').text();
                 var reg = /\d+/g;
-                var x = parsed.match(reg);
+                var x = parsed.match(reg) || 700;
                 var contributions = $('#contributions');
                 contributions.html(x);
                 resolve(x);
-            }).catch(err => reject(err))
-        })
+            }).catch(function (err) {
+                return reject(err);
+            });
+        });
     };
-
 
    /* Initialize
     * ------------------------------------------------------ */
