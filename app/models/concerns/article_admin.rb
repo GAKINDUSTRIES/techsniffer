@@ -3,9 +3,18 @@ module ArticleAdmin
 
   included do
     rails_admin do
+      list do
+        field :title
+        field :published_at
+        field :comments_permitted
+        field :published
+      end
+
       edit do
+        field :title
         field :hero_image
-        field :bio, :froala do
+        field :summary
+        field :body, :froala do
           config_options do
             {
               inlineMode: false,
@@ -13,6 +22,10 @@ module ArticleAdmin
             }
           end
         end
+        field :tags
+        field :comments_permitted
+        field :published
+        field :published_at
       end
     end
   end

@@ -424,22 +424,18 @@
         });
     };
 
-    var getCommits = function getCommits() {
+    var getCommits = function(fn) {
         var proxyUrl = 'https://urlreq.appspot.com/req?method=GET&url=';
         var url = 'https://github.com/gakindustries';
-        return new Promise(function (resolve, reject) {
-          debugger;
-            axios.get(proxyUrl + url).then(function (res) {
-                debugger;
-                var parsed = $(res.data).find('div.js-contribution-graph > h2').text();
-                var reg = /\d+/g;
-                var x = parsed.match(reg) || 700;
-                var contributions = $('#contributions');
-                contributions.html(x);
-                resolve(x);
-            }).catch(function (err) {
-                return reject(err);
-            });
+        axios.get(proxyUrl + url).then(function (res) {
+            var parsed = $(res.data).find('div.js-contribution-graph > h2').text();
+            var reg = /\d+/g;
+            var x = parsed.match(reg) || 727;
+            var contributions = $('#contributions');
+            contributions.html(x);
+            fn();
+        }).catch(function (err) {
+            console.log(err);
         });
     };
 
@@ -448,7 +444,7 @@
     $(document).ready(function() {
       (function ssInit() {
 
-        getCommits().then(function() {
+          getCommits(); //TODO, Make this a callback
           ssPreloader();
           ssPrettyPrint();
           ssMoveHeader();
@@ -465,9 +461,7 @@
           ssContactForm();
           ssBackToTop();
           ssSkills();
-        }())
       })();
     });
-
 
 })(jQuery);

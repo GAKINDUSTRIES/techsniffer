@@ -4,9 +4,9 @@
 #
 #  id                 :integer          not null, primary key
 #  title              :string           not null
-#  page_header        :string           not null
+#  hero_image         :string           not null
 #  slug               :string           not null
-#  body               :string
+#  body               :text
 #  published          :boolean          default(FALSE)
 #  tags               :string           default([]), is an Array
 #  comments_permitted :boolean          default(TRUE)
@@ -15,8 +15,6 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  summary            :string           not null
-#  bio                :text
-#  hero_image         :string
 #
 # Indexes
 #
@@ -31,20 +29,20 @@ class Article < ApplicationRecord
 
   paginates_per 7
 
-  mount_uploader :hero_image, AvatarUploader
+  mount_uploader :hero_image, BaseUploader
 
   scope :desc_order, -> { order(published_at: :desc) }
   scope :latest, -> { desc_order.first(4) }
 
   validates :title, presence: true
   validates :summary, presence: true
-  validates :page_header, presence: true
+  validates :hero_image, presence: true
   validates :slug, presence: true, uniqueness: true
 
   has_many :comments, dependent: :destroy
   belongs_to :category
 
-  before_create :assign_slug
+  before_validation :assign_slug
 
   def to_param
     slug

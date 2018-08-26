@@ -4,9 +4,9 @@
 #
 #  id                 :integer          not null, primary key
 #  title              :string           not null
-#  page_header        :string           not null
+#  hero_image         :string           not null
 #  slug               :string           not null
-#  body               :string
+#  body               :text
 #  published          :boolean          default(FALSE)
 #  tags               :string           default([]), is an Array
 #  comments_permitted :boolean          default(TRUE)
@@ -15,8 +15,6 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  summary            :string           not null
-#  bio                :text
-#  hero_image         :string
 #
 # Indexes
 #
@@ -33,7 +31,7 @@ describe Article do
     subject { build :article }
 
     it { is_expected.to validate_presence_of(:title) }
-    it { is_expected.to validate_presence_of(:page_header) }
+    it { is_expected.to validate_presence_of(:hero_image) }
     it { is_expected.to validate_presence_of(:summary) }
     it { is_expected.to validate_presence_of(:slug) }
     it { is_expected.to validate_uniqueness_of(:slug) }

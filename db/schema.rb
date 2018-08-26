@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180822205437) do
+ActiveRecord::Schema.define(version: 20180826222727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20180822205437) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
-    t.string "page_header", null: false
+    t.string "hero_image", null: false
     t.string "slug", null: false
-    t.string "body"
+    t.text "body"
     t.boolean "published", default: false
     t.string "tags", default: [], array: true
     t.boolean "comments_permitted", default: true
@@ -60,8 +60,6 @@ ActiveRecord::Schema.define(version: 20180822205437) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "summary", null: false
-    t.text "bio"
-    t.string "hero_image"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["published"], name: "index_articles_on_published"
     t.index ["published_at"], name: "index_articles_on_published_at"
