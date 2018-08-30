@@ -22,7 +22,7 @@ module ArticleAdmin
             }
           end
         end
-        field :tags
+        field :tags, :pg_string_array
         field :comments_permitted
         field :published
         field :published_at
