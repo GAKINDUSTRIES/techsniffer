@@ -4447,6 +4447,7 @@ article.blog-single .blog-content {
 /* Github Btn */
 .loginBtn--github {
     background: #444;
+    display: none;
 
     &:hover, :focus {
         -webkit-box-shadow: 0 0 .16rem .16rem #444;
