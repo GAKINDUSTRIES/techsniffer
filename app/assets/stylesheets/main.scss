@@ -3780,6 +3780,15 @@ article.blog-single .blog-content {
     z-index: 2;
 }
 
+.page-header__no-content p {
+    background: inherit;
+    text-align: center;
+    font-family: "librebaskerville-bold", serif;
+    font-size: 3rem;
+    line-height: 1.375;
+    color: white;
+}
+
 .page-header__content p {
     padding-right: 3rem;
 }
@@ -3907,6 +3916,7 @@ article.blog-single .blog-content {
         max-width: 800px;
         font-size: 1.7rem;
     }
+
     .page-header__cat {
         font-size: 1.3rem;
     }
@@ -3951,6 +3961,11 @@ article.blog-single .blog-content {
 @media only screen and (max-width: 400px) {
     .page-header__content {
         font-size: 1.6rem;
+        line-height: 1.875;
+    }
+
+    .page-header__no-content p {
+        font-size: 2rem;
         line-height: 1.875;
     }
     .page-header__title {

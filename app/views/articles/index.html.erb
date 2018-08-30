@@ -1,38 +1,45 @@
 <%= render "shared/header" %>
-<%= render "blog_list_hero" %>
 
-<section class="blog-content-wrap">
+<% if @articles.any? %>
+  <%= render "blog_list_hero" %>
 
-  <div class="row blog-content">
-    <div class="col-full">
+  <section class="blog-content-wrap">
 
-      <div class="blog-list block-1-2 block-tab-full">
+    <div class="row blog-content">
+      <div class="col-full">
 
-        <% @articles.each do |article| %>
-          <article class="col-block">
+        <div class="blog-list block-1-2 block-tab-full">
 
-            <div class="blog-date">
-              <a href="blog-single.html"><%= article.published_date %></a>
-            </div>
+          <% @articles.each do |article| %>
+            <article class="col-block">
 
-            <h2 class="h01">
-              <%= link_to article.title, article_path(article) %>
-            </h2>
-            <p><%= article.summary %></p>
+              <div class="blog-date">
+                <a href="blog-single.html"><%= article.published_date %></a>
+              </div>
 
-            <div class="blog-cat">
-              <a href="blog.html">Photography</a>
-            </div>
+              <h2 class="h01">
+                <%= link_to article.title, article_path(article) %>
+              </h2>
+              <p><%= article.summary %></p>
 
-          </article>
-        <% end %>
+              <div class="blog-cat">
+                <a href="blog.html">Photography</a>
+              </div>
 
-      </div> <!-- end blog-list -->
+            </article>
+          <% end %>
 
-    </div> <!-- end col-full -->
-  </div> <!-- end blog-content -->
+        </div> <!-- end blog-list -->
 
-  <%= render "pagination" %>
+      </div> <!-- end col-full -->
+    </div> <!-- end blog-content -->
 
-</section>
+    <%= render "pagination" %>
+
+  </section>
+
+<% else %>
+    <%= render "no_articles" %>
+<% end %>
+
 <%= render "shared/footer" %>
