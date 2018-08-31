@@ -6,7 +6,6 @@ capybara-*.html
 /log
 /tmp
 /db/*.sqlite3
-/public/
 /coverage/
 /spec/tmp
 .idea/
@@ -30,3 +29,8 @@ config/application.yml
 
 # Ignore byebug history
 .byebug_history
+
+
+/public/assets
+/public/uploads
+/public/admin

@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   end
 
   def article
-    @article ||= Article.find_by(slug: params[:slug]).decorate
+    @article ||= Article.find_by!(slug: params[:slug]).decorate
   end
 
   # TODO, paginate collection
