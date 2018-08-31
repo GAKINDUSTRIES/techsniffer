@@ -13,7 +13,9 @@ module ArticleAdmin
       edit do
         field :title
         field :hero_image
-        field :summary
+        field :summary, :text do
+          html_attributes rows: 20, cols: 48
+        end
         field :body, :froala do
           config_options do
             {

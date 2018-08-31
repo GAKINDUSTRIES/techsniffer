@@ -30,7 +30,6 @@ config/application.yml
 # Ignore byebug history
 .byebug_history
 
-
 /public/assets
 /public/uploads
 /public/admin
