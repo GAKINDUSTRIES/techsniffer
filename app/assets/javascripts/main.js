@@ -424,7 +424,7 @@
         });
     };
 
-    var getCommits = function(fn) {
+    var getCommits = function() {
         var proxyUrl = 'https://urlreq.appspot.com/req?method=GET&url=';
         var url = 'https://github.com/gakindustries';
         axios.get(proxyUrl + url).then(function (res) {
@@ -433,7 +433,6 @@
             var x = parsed.match(reg) || 727;
             var contributions = $('#contributions');
             contributions.html(x);
-            fn();
         }).catch(function (err) {
             console.log(err);
         });

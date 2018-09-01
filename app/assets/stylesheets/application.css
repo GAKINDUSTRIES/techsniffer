@@ -18,6 +18,7 @@
  *= require vendor.css
  *= require remodal.css
  *= require remodal-default-theme.css
+ *= require iconmonstr-iconic-font.css
  *= require_self
  *= require_tree .
  *= require font-awesome
