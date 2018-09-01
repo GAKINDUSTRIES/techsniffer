@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 
   layout 'application'
 
+  rescue_from Exception,                      with: :render_error
   rescue_from ActionController::RoutingError,
-              ActiveRecord::RecordNotFound, with: :rescue_from_record_not_found
+              ActiveRecord::RecordNotFound,   with: :rescue_from_record_not_found
 
   def error_404
     raise ActionController::RoutingError.new(params[:path])
@@ -14,7 +15,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def rescue_from_record_not_found
+  def render_error(exception)
+    logger.error(exception) # Report to your error managment tool here
+    Rollbar.error(exception)
+    render file: "#{Rails.root}/public/500.html", status: 404, layout: false
+  end
+
+  def rescue_from_record_not_found(exception)
+    logger.error(exception) # Report to your error managment tool here
+    Rollbar.error(exception)
     render file: "#{Rails.root}/public/404.html", status: 404, layout: false
   end
 end

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Techsniffer</title>
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <style type="text/css" media="all">
+    html, body, main {
+      height: 100%;
+      margin: 0;
+      width: 100%
+    }
+
+    main {
+      background: black;
+    }
+
+    .error-container {
+      color: white;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 370px;
+    }
+
+    .error-container h1 {
+      font-size: 70px;
+      margin-top: 0;
+    }
+
+    .error-container p {
+      font-size: 35px;
+    }
+
+    .error-container a {
+      font-size: 24px;
+      color: #862121;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===================================================================
+     * preloader - (_preloader-2.scss)
+     *
+     * ------------------------------------------------------------------- */
+
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #0F1215;
+        z-index: 800;
+        height: 100%;
+        width: 100%;
+    }
+
+    .no-js #preloader, .oldie #preloader {
+        display: none;
+    }
+
+    #loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+        margin-top: -30px;
+        padding: 0;
+        background-color: #862121;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            opacity: 0;
+        }
+    }
+
+    @keyframes sk-scaleout {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+	<!-- main content
+   ================================================== -->
+   <main id="main-500-content" class="main-content-particle-js">
+    <div class="error-container">
+      <h1>Ooops 500!</h1>
+      <p>Try coming back to this page later, for now, you may want to:</p>
+      <a href="/">Return Home</a>
+    </div>
+   </main> <!-- /main-500-content -->
+
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://s3.amazonaws.com/techsniffer-staging/assets/jquery.particleground.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('.main-content-particle-js').particleground({
+              dotColor: '#fff',
+              lineColor: '#555555',
+              particleRadius: 6,
+              curveLines: true,
+              paralax: true,
+              density: 9000,
+              proximity: 100
+          });
+      });
+  </script>
+  <script>
+      $WIN = $(window);
+      $("html").addClass('ss-preload');
+
+      $WIN.on('load', function() {
+          // will first fade out the loading animation
+          $("#loader").fadeOut("slow", function() {
+              // will fade out the whole div that covers the website.
+              $("#preloader").delay(300).fadeOut("slow");
+          });
+
+          // for hero content animations
+          $("html").removeClass('ss-preload');
+          $("html").addClass('ss-loaded');
+
+      });
+  </script>
+</body>
+
+</html>

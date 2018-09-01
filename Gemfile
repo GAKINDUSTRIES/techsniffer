@@ -28,6 +28,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem "wysiwyg-rails"
 gem "font-awesome-rails"
 gem 'omniauth-google-oauth2', '~> 0.2.2'
+gem 'rollbar', '~> 2.17.0'
 
 group :development, :test do
   gem 'bullet', '~> 5.5.1'
