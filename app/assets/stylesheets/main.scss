@@ -4340,6 +4340,29 @@ article.blog-single .blog-content {
     padding-top: 1.8rem;
 }
 
+/* -------------------------------------------------------------------
+ * responsive:
+ * comments
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 800px) {
+    #comments form button {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #comments h3 {
+        text-align: center;
+    }
+    .commentlist > .comment {
+        padding-left: 0;
+    }
+    .commentlist .comment__avatar {
+        display: none;
+    }
+}
+
 
 /* comments form
  * ---------------------------- */
