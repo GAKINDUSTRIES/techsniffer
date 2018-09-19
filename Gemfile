@@ -29,6 +29,7 @@ gem "wysiwyg-rails"
 gem "font-awesome-rails"
 gem 'omniauth-google-oauth2', '~> 0.2.2'
 gem 'rollbar', '~> 2.17.0'
+gem 'google-analytics-rails', '1.1.1'
 
 group :development, :test do
   gem 'bullet', '~> 5.5.1'

@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #
+  # Google analytics tracker id
+  GA.tracker = ENV['GA_TRACKER_ID']
 
   # Code is not reloaded between requests.
   config.cache_classes = true

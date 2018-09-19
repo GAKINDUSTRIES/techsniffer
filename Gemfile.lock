@@ -150,6 +150,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    google-analytics-rails (1.1.1)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -431,6 +432,7 @@ DEPENDENCIES
   figaro (~> 1.1.1)
   fog-aws (~> 2.0.0)
   font-awesome-rails
+  google-analytics-rails (= 1.1.1)
   haml-rails (~> 1.0.0)
   jbuilder (~> 2.7.0)
   jquery-rails (~> 4.3.1)
