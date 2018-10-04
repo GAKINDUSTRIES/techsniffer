@@ -8,7 +8,7 @@
 #  recommender_name    :string
 #  relationship        :integer
 #  subject             :string
-#  recommendation_id   :integer
+#  recommendation_id   :integer          not null
 #  admin_id            :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
