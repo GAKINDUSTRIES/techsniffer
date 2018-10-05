@@ -17,8 +17,8 @@
 class Comment < ApplicationRecord
   belongs_to :article
 
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :message, presence: true
-  validates :article, presence: true
+  validates :name,
+            :email,
+            :message,
+            :article, presence: true
 end

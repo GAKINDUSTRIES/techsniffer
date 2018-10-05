@@ -40,14 +40,14 @@
 class Admin < ApplicationRecord
   include AdminRailsAdmin
 
+  mount_uploader :avatar, AvatarUploader
+
   has_many :work_experiences, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :recommendations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  mount_uploader :avatar, AvatarUploader
 
   validates :first_name,
             :last_name,

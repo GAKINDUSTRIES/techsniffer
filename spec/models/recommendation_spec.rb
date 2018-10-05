@@ -23,6 +23,10 @@
 require 'rails_helper'
 
 describe Recommendation do
+  describe 'associations' do
+    it { is_expected.to belong_to :admin }
+  end
+
   describe 'validations' do
     subject { build :recommendation }
     it { is_expected.to validate_presence_of :admin }
@@ -30,9 +34,5 @@ describe Recommendation do
 
   describe 'enums' do
     it { is_expected.to define_enum_for(:relationship) }
-  end
-
-  describe 'associations' do
-    it { is_expected.to belong_to :admin }
   end
 end
