@@ -27,13 +27,15 @@
 class Article < ApplicationRecord
   scope :latest, -> { order(published_at: :desc).first(4) }
 
-  validates :title, presence: true
-  validates :summary, presence: true
-  validates :page_header, presence: true
-  validates :slug, presence: true, uniqueness: true
-
   has_many :comments, dependent: :destroy
+
   belongs_to :category
+
+  validates :title,
+            :summary,
+            :page_header,
+            :slug, presence: true
+  validates :slug, uniqueness: true
 
   before_create :assign_slug
 
