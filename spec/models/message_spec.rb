@@ -19,9 +19,13 @@
 require 'rails_helper'
 
 describe Message do
+  describe 'associations' do
+    it { is_expected.to belong_to :admin }
+  end
+
   describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:message) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:message) }
   end
 end

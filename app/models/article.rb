@@ -34,19 +34,17 @@ class Article < ApplicationRecord
   scope :desc_order, -> { order(published_at: :desc) }
   scope :latest, -> { desc_order.first(4) }
 
-  validates :title, presence: true
-  validates :summary, presence: true
-  validates :hero_image, presence: true
-  validates :slug, presence: true, uniqueness: true
-
   has_many :comments, dependent: :destroy
+
   belongs_to :category
 
-  before_validation :assign_slug
+  validates :title,
+            :summary,
+            :hero_image,
+            :slug, presence: true
+  validates :slug, uniqueness: true
 
-  def to_param
-    slug
-  end
+  before_create :assign_slug
 
   private
 

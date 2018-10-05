@@ -22,14 +22,14 @@ require 'rails_helper'
 describe WorkExperience do
   describe 'validations' do
     subject { build :work_experience }
-    it { should validate_presence_of :start_at }
-    it { should validate_presence_of :company }
-    it { should validate_presence_of :position }
-    it { should validate_presence_of :description }
-    it { should validate_presence_of :admin }
+    it { is_expected.to validate_presence_of :start_at }
+    it { is_expected.to validate_presence_of :company }
+    it { is_expected.to validate_presence_of :position }
+    it { is_expected.to validate_presence_of :description }
+    it { is_expected.to validate_presence_of :admin }
   end
 
   describe 'Associations' do
-    it { should belong_to :admin }
+    it { is_expected.to belong_to :admin }
   end
 end

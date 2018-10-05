@@ -21,9 +21,8 @@ class Comment < ApplicationRecord
   belongs_to :article
   belongs_to :user
 
-  validates :message, presence: true
-  validates :article, presence: true
-  validates :user, presence: true
-
   scope :ordered_by_date, -> { order(id: :desc) }
+  validates :message,
+            :user,
+            :article, presence: true
 end

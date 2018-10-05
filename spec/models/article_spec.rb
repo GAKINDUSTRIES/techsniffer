@@ -44,21 +44,23 @@ describe Article do
 
   describe 'callbacks' do
     describe 'before_create' do
-      context 'when title is not present' do
-        let(:article) { build :article, title: nil }
+      describe '#assign_slug' do
+        context 'when title is not present' do
+          let(:article) { build :article, title: nil }
 
-        it 'does not raise an error' do
-          expect { article.send(:assign_slug) }.not_to raise_error
+          it 'does not raise an error' do
+            expect { article.send(:assign_slug) }.not_to raise_error
+          end
         end
-      end
 
-      context 'when title is present' do
-        let(:article) { build :article, title: 'My New Article' }
+        context 'when title is present' do
+          let(:article) { build :article, title: 'My New Article' }
 
-        it 'assigns the corresponding slug' do
-          article.send(:assign_slug)
+          it 'assigns the corresponding slug' do
+            article.send(:assign_slug)
 
-          expect(article.slug).to eq 'my-new-article'
+            expect(article.slug).to eq 'my-new-article'
+          end
         end
       end
     end
