@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  mount_devise_token_auth_for 'User', at: '/api/v1/users', skip: [:omniauth_callbacks], controllers: {
-    registrations:  'api/v1/registrations',
-    sessions:  'api/v1/sessions',
-    passwords:  'api/v1/passwords'
-  }
+  mount_devise_token_auth_for 'User', at: '/api/v1/users',
+                                      skip: [:omniauth_callbacks],
+                                      controllers: {
+                                        registrations:  'api/v1/registrations',
+                                        sessions:  'api/v1/sessions',
+                                        passwords:  'api/v1/passwords'
+                                      }
 
   get '/', to: 'home#index', as: :root
   resources :messages, only: :create
@@ -35,5 +37,5 @@ Rails.application.routes.draw do
     end
   end
 
-  match '*path' => 'application#error_404', via: :all
+  match '*path' => 'application#not_found_error', via: :all
 end

@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
 
   layout 'application'
 
-  rescue_from Exception,                      with: :render_error
+  rescue_from Exception, with: :render_error
   rescue_from ActionController::RoutingError,
-              ActiveRecord::RecordNotFound,   with: :rescue_from_record_not_found
+              ActiveRecord::RecordNotFound, with: :rescue_from_record_not_found
 
-  def error_404
-    raise ActionController::RoutingError.new(params[:path])
+  def not_found_error
+    raise ActionController::RoutingError, params[:path]
   end
 
   private

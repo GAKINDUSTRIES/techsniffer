@@ -1,12 +1,12 @@
-<% @prev = previous_page(@current_page, @per_page, @total_articles) %>
-<% @next = next_page(@current_page, @per_page, @total_articles) %>
+<% @prev = previous_page(current_page, per_page, total_articles) %>
+<% @next = next_page(current_page, per_page, total_articles) %>
 <div class="row blog-entries-nav">
   <div class="col-full">
-  <%= link_to @prev ? articles_path.concat("?page=#{@current_page.to_i - 1}") : '#', class: "btn btn--stroke #{ @prev ? '' : 'btn--stroke__disabled' }" do %>
+  <%= link_to @prev ? articles_path.concat("?page=#{current_page.to_i - 1}") : '#', class: "btn btn--stroke #{ @prev ? '' : 'btn--stroke__disabled' }" do %>
       <i class="im im-arrow-left"></i>
       Prev
     <% end %>
-  <%= link_to @next ? articles_path.concat("?page=#{@current_page.to_i + 1}") : '#', class: "btn btn--stroke #{ @next ? '' : 'btn--stroke__disabled' }" do %>
+  <%= link_to @next ? articles_path.concat("?page=#{current_page.to_i + 1}") : '#', class: "btn btn--stroke #{ @next ? '' : 'btn--stroke__disabled' }" do %>
       <i class="im im-arrow-right"></i>
       Next
     <% end %>

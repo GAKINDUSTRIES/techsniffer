@@ -8,8 +8,9 @@ module Articles
     def create
       respond_to do |format|
         format.js do
-          article.comments.create(comment_params)
-          @comments = article.comments.includes(:user).ordered_by_date.decorate
+          comments = article.comments
+          comments.create(comment_params)
+          @comments = comments.includes(:user).ordered_by_date.decorate
         end
       end
     end

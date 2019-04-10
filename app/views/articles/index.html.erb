@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <% if @articles.any? %>
-  <%= render "blog_list_hero" %>
+  <%= render "blog_list_hero", articles: @articles %>
 
   <section class="blog-content-wrap">
 
@@ -34,7 +34,7 @@
       </div> <!-- end col-full -->
     </div> <!-- end blog-content -->
 
-    <%= render "pagination" %>
+    <%= render "pagination",  current_page: @current_page, per_page: @per_page, @total_articles: total_articles%>
 
   </section>
 
