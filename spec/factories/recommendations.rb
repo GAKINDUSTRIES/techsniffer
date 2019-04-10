@@ -27,7 +27,6 @@ FactoryBot.define do
     recommender_name    { Faker::Name.first_name }
     relationship        { 0 }
     subject             { Faker::Lorem.sentence }
-    recommendation_id   { Faker::Number.unique.digit }
     admin
   end
 end

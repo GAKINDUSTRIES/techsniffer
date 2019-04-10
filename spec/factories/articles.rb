@@ -28,7 +28,7 @@ FactoryBot.define do
   factory :article do
     title        { Faker::Lorem.unique.sentence }
     slug         { title&.parameterize }
-    page_header  { Rails.root.join('spec/support/blank.jpg').open }
+    hero_image   { Rails.root.join('spec/support/blank.jpg').open }
     body         { Faker::Lorem.paragraph }
     summary      { Faker::Lorem.paragraph }
     published_at { Faker::Date.between(2.years.ago, Date.today) }

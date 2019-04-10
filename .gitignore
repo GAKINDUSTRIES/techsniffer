@@ -33,3 +33,4 @@ config/application.yml
 /public/assets
 /public/uploads
 /public/admin
+/public/article
