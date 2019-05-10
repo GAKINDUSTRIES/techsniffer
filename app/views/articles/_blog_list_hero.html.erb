@@ -15,11 +15,11 @@
       </div>
 
       <h1 class="page-header__title">
-        <%= link_to main_article.title, article_path(main_article) %>
+        <%= link_to main_article.title, article_path(main_article.slug) %>
       </h1>
       <p><%= main_article.summary %></p>
       <p>
-        <%= link_to "Read More", article_path(main_article), class: "btn btn--stroke page-header__btn" %>
+        <%= link_to "Read More", article_path(main_article.slug), class: "btn btn--stroke page-header__btn" %>
       </p>
     </article>
   </div>

@@ -16,11 +16,11 @@
         <article class="col-block">
 
           <div class="blog-date">
-            <%= link_to article.published_date, article_path(article) %>
+            <%= link_to article.published_date, article_path(article.slug) %>
           </div>
 
           <h2 class="h01">
-            <%= link_to article.title, article_path(article) %>
+            <%= link_to article.title, article_path(article.slug) %>
           </h2>
           <p><%= article.summary %></p>
 

@@ -18,7 +18,7 @@
               </div>
 
               <h2 class="h01">
-                <%= link_to article.title, article_path(article) %>
+                <%= link_to article.title, article_path(article.slug) %>
               </h2>
               <p><%= article.summary %></p>
 
@@ -34,8 +34,7 @@
       </div> <!-- end col-full -->
     </div> <!-- end blog-content -->
 
-    <%= render "pagination",  current_page: @current_page, per_page: @per_page, @total_articles: total_articles%>
-
+    <%= render "pagination", current_page: @current_page, per_page: @per_page, total_articles: @total_articles %>
   </section>
 
 <% else %>

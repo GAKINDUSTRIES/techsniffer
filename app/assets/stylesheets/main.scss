@@ -872,7 +872,7 @@ input[type="button"].btn--primary:focus {
   &:hover, &:focus, &:active, &:visited {
       color: gray;
       border: 0.3rem solid gray;
-      cursor: default;
+      pointer-events: none;
   }
 }
 

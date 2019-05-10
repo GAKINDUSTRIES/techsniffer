@@ -1,5 +1,6 @@
-<% @prev = previous_page(current_page, per_page, total_articles) %>
-<% @next = next_page(current_page, per_page, total_articles) %>
+<% @prev = previous_page(current_page.to_i, per_page.to_i, total_articles.to_i) %>
+<% @next = next_page(current_page.to_i, per_page.to_i, total_articles.to_i) %>
+
 <div class="row blog-entries-nav">
   <div class="col-full">
   <%= link_to @prev ? articles_path.concat("?page=#{current_page.to_i - 1}") : '#', class: "btn btn--stroke #{ @prev ? '' : 'btn--stroke__disabled' }" do %>
