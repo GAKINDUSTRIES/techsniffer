@@ -36,8 +36,8 @@ en:
     viewport: "width=device-width, initial-scale=1"
   page_hero:
     greetings:
-      presentation: "I am"
-      title: "I am a Software engineer"
+      presentation: "I'm"
+      title: "a Software Engineer"
       title2: "based in Uruguay"
   social:
     github: "https://github.com/gakindustries"

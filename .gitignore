@@ -34,3 +34,5 @@ config/application.yml
 /public/uploads
 /public/admin
 /public/article
+
+tags
