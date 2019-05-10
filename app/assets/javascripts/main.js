@@ -202,15 +202,17 @@
      * ------------------------------------------------------ */
     var ssSlickSlider = function() {
 
-        $('.testimonials__slider').slick({
+        console.log('ejecutando');
+        $('.testimonials__slider').not('.slick-initialized').slick({
             arrows: true,
+            autoplay: true,
             dots: false,
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 1,
             prevArrow: "<div class=\'slick-prev\'><i class=\'im im-arrow-left\' aria-hidden=\'true\'></i></div>",
             nextArrow: "<div class=\'slick-next\'><i class=\'im im-arrow-right\' aria-hidden=\'true\'></i></div>",
-            pauseOnFocus: false,
+            pauseOnFocus: true,
             autoplaySpeed: 1500,
             responsive: [
                 {

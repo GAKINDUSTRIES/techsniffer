@@ -15,7 +15,7 @@ class RecommendationDecorator < Draper::Decorator
   end
 
   def recommender_postion_and_role
-    role = recommender_role.upcase
+    role = recommender_role&.upcase
     return role if recommender_company.blank?
     role + ' , ' + recommender_company
   end
