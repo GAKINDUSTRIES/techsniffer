@@ -44,7 +44,7 @@ class Article < ApplicationRecord
             :slug, presence: true
   validates :slug, uniqueness: true
 
-  before_create :assign_slug
+  before_save :assign_slug, if: :slug_changed?
 
   private
 
